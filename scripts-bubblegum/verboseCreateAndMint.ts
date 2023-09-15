@@ -55,10 +55,6 @@ let initBalance: number;
 let balance: number;
 
 export const verboseCreateAndMint = async () => {
-  console.log('abc');
-  /// ///////////////////////////////////////////////////////////////////////////
-  /// ///////////////////////////////////////////////////////////////////////////
-
   // generate a new Keypair for testing, named `wallet`
   const testWallet = loadOrGenerateKeypair('testWallet');
 
@@ -142,8 +138,9 @@ export const verboseCreateAndMint = async () => {
     canopyDepth,
   );
 
-  const storageCost =
-    await connection.getMinimumBalanceForRentExemption(requiredSpace);
+  const storageCost = await connection.getMinimumBalanceForRentExemption(
+    requiredSpace,
+  );
 
   // demonstrate data points for compressed NFTs
   console.log('Space to allocate:', numberFormatter(requiredSpace), 'bytes');

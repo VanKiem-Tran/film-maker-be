@@ -18,7 +18,8 @@ app.get('/', async (_, res) => {
   });
 });
 
-app.post('/', async (_, res) => {
+app.post('/', async (req, res) => {
+  console.log(req.body);
   await verboseCreateAndMint();
   res.json({
     msg: 'Hello World!',
